@@ -6,22 +6,21 @@ import math
 import csv
 import string
 
-def random_location_pair_gen():
+def random_location():
     current_lat = uniform(-0.309,0.181)
     current_long = uniform(51.423, 51.656)
     des_lat = uniform(-0.309,0.181)
     des_long = uniform(51.423, 51.656)
     return current_lat, current_long, des_lat, des_long
 
-def distance():
+def distance(lat1, long1, lat2, long2):
     distance = 31
     while(distance > 30):
-        L = random_location_pair_gen()
         R = 6373.0
-        dlon = radians(L[3]) - radians(L[1])
-        dlat = radians(L[2]) - radians(L[0])
+        dlon = radians(long2) - radians(long1)
+        dlat = radians(lat2) - radians(lat1)
 
-        a = sin(dlat / 2)**2 + cos(radians(L[0])) * cos(radians(L[2])) * sin(dlon / 2)**2
+        a = sin(dlat / 2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2)**2
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
         distance = R * c
         if distance <= 30:

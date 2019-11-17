@@ -13,13 +13,13 @@ class taxi:
     def dropoff():
         self.passenger -= 1
     def direction(bound):
-        if bound == 'W'
+        if bound == 'W':
             self.level = westbound
-        else if bound == 'E'
+        elif bound == 'E':
             self.level = eastbound
-        else if bound == 'N'
+        elif bound == 'N':
             self.level = northbound
-        else if bound == 'S'
+        elif bound == 'S':
             self.level = southbound
     #def charging():
         #self.battery
@@ -29,3 +29,4 @@ bet365 = taxi("bet365")
 booking = taxi("booking.com")
 netcraft = taxi("netcraft")
 arm = taxi("arm")
+print(arm.name)
